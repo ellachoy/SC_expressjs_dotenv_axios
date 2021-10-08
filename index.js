@@ -11,8 +11,7 @@ app.listen(port, ()=>{
     console.log(`listening at http://localhost:${port}`)
 })
 
-
-app.get('/', (req, res) => {
+app.get('/index', (req, res) => {
     res.render('index.ejs',{title:home})
 })
 app.get('/about', (req, res) => {
