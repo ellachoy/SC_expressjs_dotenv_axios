@@ -28,10 +28,10 @@ app.get('/contact', (req, res) => {
     res.render('contact.ejs')
  })
  app.get('/news',(req,res) => {
-    axios.get('/user?ID=12345')
+    axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.API_KEY}``)
     .then(function (response) {
       // handle success
-      console.log(response);
+      console.log(response.data.articles);
     })
     .catch(function (error) {
       // handle error
