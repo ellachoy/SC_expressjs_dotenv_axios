@@ -1,4 +1,8 @@
 const express = require('express');
+require('dotenv').config()
+console.log(process.env)
+
+
 const app = express()
 const port= process.env.PORT || 3000;
 
@@ -12,7 +16,12 @@ app.listen(port, ()=>{
 })
 
 app.get('/', (req, res) => {
-    res.render('index.ejs',{title:"home"})
+    res.render('index.ejs',
+    { 
+        title:"home",
+        apiKey: process.env.API_KEY,
+        username: process.env.USERNAME
+    })
 })
 app.get('/about', (req, res) => {
    res.render('about.ejs')
