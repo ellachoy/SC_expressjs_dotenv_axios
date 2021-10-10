@@ -27,14 +27,15 @@ app.get('/about', (req, res) => {
 app.get('/contact', (req, res) => {
     res.render('contact.ejs')
  })
- app.get('/news',(req,res) => {
-    axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.API_KEY}``)
-    .then(function (response) {
-      // handle success
-      console.log(response.data.articles);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
- })
+ app.get('/news', (req, res) => {
+  axios.get(`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${process.env.API_KEYY}`)
+      .then(function (response) {
+          // handle success
+          console.log(response.data.articles);
+          res.render('news.ejs', { articles: response.data.articles })
+      })
+      .catch(function (error) {
+          // handle error
+          console.log(error);
+      })
+})

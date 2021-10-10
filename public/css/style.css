@@ -1,8 +1,0 @@
-ul {
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-}
-li {
-  padding: 10px;
-}
