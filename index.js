@@ -3,14 +3,14 @@ const axios = require('axios');
 require('dotenv').config()
 
 const app = express()
-const port= process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 
 // app.set('views', './views')
 //view engine
-//  app.set('view engine', 'ejs');
+app.set('view engine', 'ejs');
 
-app.listen(port, ()=>{
-    console.log(`listening at http://localhost:${port}`)
+app.listen(port, () => {
+  console.log(`listening at http://localhost:${port}`)
 })
 //https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=67833ec7649a4b6fab36f8b90c9d5bf2
 app.get('/', (req, res) => {
