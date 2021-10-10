@@ -7,7 +7,7 @@ const port= process.env.PORT || 3000;
 
 // app.set('views', './views')
 //view engine
- app.set('view engine', 'ejs');
+//  app.set('view engine', 'ejs');
 
 app.listen(port, ()=>{
     console.log(`listening at http://localhost:${port}`)
@@ -17,8 +17,7 @@ app.get('/', (req, res) => {
     res.render('index.ejs',
     { 
         title:"home",
-        apiKey: process.env.API_KEY,
-        username: process.env.USERNAME
+       
     })
 })
 app.get('/about', (req, res) => {
